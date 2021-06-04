@@ -26,7 +26,28 @@ This project includes 3 executable files, 3 text files inside sub-folder *Nandan
 ### Input Files:
 **ex1_input.txt** - Contains sample input for exercise 1
 
-**ex2_inpu2.txt** - Conatins sample input for exercise 2
+**Input File Format**
+
+The first line of the input contains the two numbers N and M separated by space, and both numbers are on the interval [1, 1000]. The number N represents the dimension of the city in blocks (the city has NxN blocks). M is the number of pizzerias in the city. The following M lines contain information about each pizzeria, given by the three numbers X, Y, K(space separated). The numbers X and Y represent the block where the pizzeria is located, (1 <= X, Y <= N) and the number K represents the maximum distance that the given pizzeria's delivery guy will travel to deliver pizza (1 <= K <= 1000). For e.g. -
+
+```
+5 2
+3 3 2
+1 1 2
+```
+
+**ex2_inpu2.txt** - Contains sample input for exercise 2
+
+**Input File Format**
+
+The first line of the input contains three space-separated real numbers, each from the interval [-10000.00, 10000.00], representing the 3D coordinates of the planet Zearth. The next line contains a number N, corresponding to the number of teleportation stations in space (1<=N<=500). Each of the next N lines contains three real numbers(space-separated) each from the interval [-10000.00, 10000.00], representing the 3D coordinates for each station. For e.g. -
+```
+2.00 2.00 2.00
+3
+0.00 0.00 2.00
+0.00 2.00 2.00
+2.00 0.00 0.00
+```
 
 ### Document File:
 
