@@ -1,0 +1,77 @@
+*-----------------------------------Exercise 1------------------------------------------------------------------------------------------------------------------*
+*-----Approach 1-------*
+1. Initialize city matrix with all entries 0 of size NXN
+2. For each pizzeria location, I will precompute a distance matrix of size NXN with each block(x,y) of distance matrix representing the Manhattan distance(|x2 - x1| + |y2 - y1| since it's a grid) of the block from the pizzeria location. 
+3. Iterate over the entire distance matrix and if the block(x,y) is less than equal to K(epresents the maximum distance that the given pizzeria's delivery guy will travel to deliver pizza), update city[x,y]= city[x,y]+1
+
+******Complexity Analysis******
+T = input size = N*N
+M = No of pizzeria locations
+
+Time Complexity = O(T*M) [For each pizza location m, iterating over the entire city]
+Space Complexity = O(T+T) ~ O(T) [For each pizza location, storing a distance matrix, plus city matrix]
+
+*-----Approach 2-------* (Implemented Approach in python)
+1. Initialize city matrix with all entries 0 of size NXN
+2. For each pizzeria location, traverse vertically and horizontally in the city matrix in both directions till depth K
+3. If city[x,y] is not visited yet, increment city[x,y] by 1 i.e.-
+	1. if visited[x,y]==0:
+	2. 		update city[x,y]= city[x,y]+1
+	3.		visited[x,y] =1
+	
+******Complexity Analysis******	
+T = input size = N*N
+M = No of pizzeria locations
+K = Maximum distance that the given pizzeria's delivery guy will travel to deliver pizza
+
+Time Complexity = O(K^2*M) For each pizzeria location, I can go in 4 directions in the matrix, so no of computations will be 4(K+(K-1)+(K-2)+(K-3)..........0) = 4(K^2)/2 = 2K^2 = O(K^2)
+In most of the cases K<<N, so this time complexity will be much less than approach 1.
+Space Complexity = O(T+T) ~ O(T) [For each pizza location, storing a visited matrix, plus city matrix]
+
+
+
+
+
+*-----------------------------------Exercise 2------------------------------------------------------------------------------------------------------------------*
+
+*-----Approach 1-------*(Implemented Approach in python)
+1. In this problem, the catch is that one have to find the max weights of the path which has the shortest distance jump between each teleport. It is not the same problem as finding the shortest path from source to destination.
+2. Best way for it is to compute the Minimum spanning tree(MST) of the graph created by all the teleportations including earth and Zearth. Once MST is obatined, calculate the max weight edge(max distance) on the path from source(earth) to destination(Zearth).
+
+Following steps I have followed to solve this problem-
+Step1: Initialize graph with the number of teleportations(including earth and Zearth) and add edges to the graph between each pair(i,j) of teleportations(such that i<j), edge weight is calculated using eucledian distance between 2 teleports.
+Step2: Get MST of the given graph from Kruskal Minimum Spanning Tree algorithm
+Step3: Depth First Search(DFS) traversal on MST to find cost of the path from earth(source) to zearth(destination) till source is equal to destination.
+Step4: Given path from DFS from earth to zearth, return max edge weight
+
+******Complexity Analysis******
+V = No of teleportations(No of vertices in graph)
+E = No of edges = V+V-1+V-2+V-3..........1 = V(V+1)/2 ~0(V^2)
+
+Time Complexity = O(Elog|V|+ |V|) 
+Elog|V| - For calculating MST using Kruskal's algorithm
+|V| - For DFS traversal of MST
+
+Space Complexity =  O(|E| + |V|+ |V|) ~ O(|E|+|V|), since Disjoint Set Data Structure takes O(|V|) space to keep track of the roots of all the vertices. O(|E|) space to store all edges in sorted manner. Another O|V| for DFS traversal for MST.
+
+
+
+*-----Approach 2-------*(Initial Thoughts)
+Till step2, approach2 is same as approach 1.
+In Step3, instead of using DFS to calculate the path, one could also use shortest path algorithms like Dijikstra to find the path from source to destination in MST. I have used DFS since there will be only one path from source to destination in MST and Dijikstra will calculate paths from source to every destination.
+
+******Complexity Analysis******
+V = No of teleportations(No of vertices in graph)
+E = No of edges = V+V-1+V-2+V-3..........1 = V(V+1)/2 ~0(V^2)
+
+Time Complexity = O(Elog|V|+ |V^2|) 
+Elog|V| - For calculating MST using Kruskal's algorithm
+|V^2| - For Dijikstra shortest path
+
+Space Complexity =  O(|E| + |V|+ |V|+ |E|) ~ O(|E|+|V|), since Disjoint Set Data Structure takes O(|V|) space to keep track of the roots of all the vertices. O(|E|) space to store all edges in sorted manner. Another O(|V|+|E|) for dijikstra algorithm.
+
+
+
+
+	
+
