@@ -14,7 +14,7 @@ pip install numpy
 
 ## Project Files Description
 
-This Project includes 3 executable files, 3 text files inside sub-folder *Nandani_Garg*
+This project includes 3 executable files, 3 text files inside sub-folder *Nandani_Garg*
 
 ### Executable Files:
 **exercise1.py** - Python solution for exercise 1, uses **ex1_input.txt** as the sample input file, prints output (number of pizzerias that deliver pizzas to the block with the greatest selection of pizzas) on the terminal.
@@ -27,6 +27,10 @@ This Project includes 3 executable files, 3 text files inside sub-folder *Nandan
 **ex1_input.txt** - Contains sample input for exercise 1
 
 **ex2_inpu2.txt** - Conatins sample input for exercise 2
+
+### Document File:
+
+**Approaches_brief.txt** - Explains decisions taken for implementing the solutions. It contains time complexity analysis as well.
 
 
 ## Usage
