@@ -14,7 +14,7 @@ pip install numpy
 
 ## Project Files Description
 
-This Project includes 3 executable files, 3 text files inside sub-folder Nandani_Garg
+This Project includes 3 executable files, 3 text files inside sub-folder *Nandani_Garg*
 
 ### Executable Files:
 **exercise1.py** - Python solution for exercise 1, uses **ex1_input.txt** as the sample input file, prints output (number of pizzerias that deliver pizzas to the block with the greatest selection of pizzas) on the terminal.
