@@ -1,6 +1,6 @@
-# Alpian-Test
+#Pizzeria_Zearth_Sol
 
-This private repository is created to write exercise solutions for Alpian
+This private repository is created to write exercise solutions for problems mentioned in 'questions.txt'.
 
 ## Installation
 
