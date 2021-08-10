@@ -1,4 +1,4 @@
-##Pizzeria_Zearth_Sol
+## Pizzeria_Zearth_Sol
 
 This private repository is created to write exercise solutions for problems mentioned in 'questions.txt'.
 
